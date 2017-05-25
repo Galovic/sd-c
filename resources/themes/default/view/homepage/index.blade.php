@@ -1,7 +1,12 @@
 @extends('theme::layouts.main')
 
+
 @section('content')
 
+
+
+
+{{--
     <!-- BREADCRUMB -->
     <div class="container">
         <div class="row">
@@ -13,9 +18,9 @@
             </div>
         </div>
     </div>
-    <!-- /BREADCRUMB -->
+    <!-- /BREADCRUMB -->--}}
 
-    <!-- CONTAIN -->
+   {{-- <!-- CONTAIN -->
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -182,6 +187,6 @@
             </div>
         </div>
     </div>
-    <!-- /PAGINATION -->
+    <!-- /PAGINATION -->--}}
 
 @endsection

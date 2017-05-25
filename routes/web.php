@@ -221,6 +221,39 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
     });
 
+    // References
+    Route::group(['prefix' => 'references'], function () {
+        Route::get('/', [
+            'as' => 'admin.references.index',
+            'uses' => 'ReferencesController@index'
+        ]);
+        Route::post('/', [
+            'as' => 'admin.references.store',
+            'uses' => 'ReferencesController@store',
+        ]);
+
+        Route::get('create', [
+            'as' => 'admin.references.create',
+            'uses' => 'ReferencesController@create',
+        ]);
+
+        Route::get('{reference}/edit', [
+            'as' => 'admin.references.edit',
+            'uses' => 'ReferencesController@edit',
+        ]);
+
+        Route::patch('{reference}', [
+            'as' => 'admin.references.update',
+            'uses' => 'ReferencesController@update',
+        ]);
+
+        Route::delete('{reference}/delete', [
+            'as' => 'admin.references.delete',
+            'uses' => 'ReferencesController@delete',
+        ]);
+    });
+
+
     // Pages
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/', [
@@ -611,3 +644,10 @@ Route::get('/{url?}', [
     'as' => 'homepage',
     'uses' => 'MainController@index'
 ])->where('url', '(.*)');
+
+// Articles
+Route::get('/articles/{url?}', [
+    'as' => 'articles.detail',
+    'uses' => 'ArticlesController@index'
+]);
+

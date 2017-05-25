@@ -77,7 +77,13 @@ class ContextBase
 
     public function renderService(Service $service){
         $this->object = $service;
-        return $this->view('homepage.index');
+        return $this->view('services.detail', compact('service'));
+
+    }
+    public function renderReference(Reference $reference){
+        $this->object = $reference;
+        return $this->view('references.detail', compact('reference'));
+
     }
 
 

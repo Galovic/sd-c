@@ -55,7 +55,7 @@ return [
 //                'size' => [680, 340],
 //            ],
             'small' => [
-                'size' => [340, 170],
+                'size' => [366, 300],
             ],
 //            'thumbnail' => [
 //                'size' => [175, 73],
@@ -85,7 +85,7 @@ return [
 //                'size' => [680, 340],
 //            ],
             'small' => [
-                'size' => [340, 170],
+                'size' => [366, 360],
             ],
 //            'thumbnail' => [
 //                'size' => [175, 73],
@@ -138,6 +138,7 @@ return [
     'urls' => [
         'articles' => 'articles',
         'services' => 'services',
+        'references' => 'references',
     ],
 
 

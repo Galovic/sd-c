@@ -102,6 +102,8 @@ class MainController extends BaseController
                 return $this->context->renderCategory($model);
             case Service::class:
                 return $this->context->renderService($model);
+            case Reference::class:
+                return $this->context->renderReference($model);
         }
 
         // Try to find render function

@@ -107,6 +107,20 @@ class AdminController extends Controller
                 }
             }
 
+/*
+            if ($user->can('services-show')) {
+                $menu->add('Služby', [
+                    'route' => 'admin.services.index',
+                    'icon' => 'fa fa-pencil'
+                ]);
+            }*/
+
+            if ($user->can('references-show')) {
+                $menu->add('Reference', [
+                    'route' => 'admin.references.index',
+                    'icon' => 'fa fa-image'
+                ]);
+            }
 
             if ($user->can('pages-show')) {
                 $menu->add('Stránky', [

@@ -9,7 +9,7 @@
                 <br>
                 <ol class="breadcrumb">
                     <li><a href="#">Články</a></li>
-                    <li><a href="{{ $article->full_url }}">{{ $article->title }}</a></li>
+                    <li><a href="{{ $service->full_url }}">{{ $service->title }}</a></li>
                 </ol>
             </div>
         </div>
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-md-12">
 
-    <div class="cbp-l-project-title">{{ $article->title }}</div>
+    <div class="cbp-l-project-title">{{ $service->title }}</div>
 
 
 
@@ -28,14 +28,14 @@
             <div class="cbp-l-project-desc">
 
 
-                {!! $article->text !!} </div>
+                {!! $service->text !!} </div>
             <div class="cbp-l-project-details pull-right">
                 <h5>Project detail :</h5>
                 <ul class="cbp-l-project-details-list">
 
-                    <li><strong>Datum</strong>{{ $article->publish_at->format('j.n.Y H:i') }}</li>
-                    <li><strong>Kategorie</strong>&bull; <?php
-                        foreach($article->categories as $category){
+                    <li><strong>Datum</strong>{{ $service->publish_at->format('j.n.Y H:i') }}</li>
+                    <li><strong>Categories</strong>&bull; <?php
+                        foreach($service->categories as $category){
                             echo $category->name . ' &bull; ';
                         }
                         ?></li>

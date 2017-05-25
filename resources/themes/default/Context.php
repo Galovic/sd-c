@@ -64,7 +64,7 @@ class Context extends \App\Models\ContextBase
         $articlesPageUrl = \App\Models\Web\Url::findModel(
             \App\Models\Page\Page::class,
             $this->theme->get($languageCode . '_articles_page_id')
-        )->url;
+        );
 
         return $this->view('articles.detail', compact('article', 'articlesPageUrl'));
     }
