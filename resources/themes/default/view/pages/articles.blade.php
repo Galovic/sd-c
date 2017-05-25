@@ -34,7 +34,7 @@
                                 @if(in_array($category->name,$prev))
 
                                 @else
-                                        <div data-filter=".{{ $category->name }}" class="cbp-filter-item">
+                                        <div data-filter=".{{ str_replace(' ', '-',$category->name) }}" class="cbp-filter-item">
                                             {{ $category->name }}
                                         </div>
                                 @endif
@@ -61,20 +61,32 @@
             <div class="col-md-12">
                 <!-- Start portfolio -->
                 <div id="js-grid-masonry" class="cbp">
+
+
+
                     <!-- Start project 1 -->
                     @foreach($articles as $article)
-                    <div class="cbp-item  @foreach($article->categories as $category){{ $category->name . ' ' }}@endforeach">
+                    <div class="cbp-item  @foreach($article->categories as $category){{ str_replace(' ', '-',$category->name) . ' ' }}@endforeach">
                         <a href="{{ $article->full_url }}" class="cbp-caption" rel="nofollow">
-                            <div class="cbp-caption-defaultWrap">
+                            <div class="{{--cbp-caption-defaultWrap--}}">
                                 <img src="{{ $article->image_url }}" alt="" />
                             </div>
-                            <div class="cbp-caption-activeWrap">
+                       {{--     <div class="cbp-caption-activeWrap">
                                 <div class="cbp-l-caption-zoom">
                                     <div class="cbp-l-caption-body">
                                         <div class="cbp-l-caption-title">{{ $article->title }}</div>
                                         <div class="cbp-l-caption-desc">{{ $article->perex }}</div>
                                     </div>
                                 </div>
+                            </div>--}}
+                            <div class="cbp-custom-title">
+                                <a href="portfolioDetail/project1.html" class="cbp-singlePage cbp-project-name" rel="nofollow">{{ $article->title }}</a>
+                                <div class="cbp-projects-desc">{{ $article->perex }}</div>
+                                <ul class="cbp-project-action">
+                                  {{--  <li><a href="#">202 <i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#">80 <i class="fa fa-download"></i></a></li>--}}
+                                    <li><a href="{{ $article->full_url }}"><span class="project-label">Více</span></a></li>
+                                </ul>
                             </div>
                         </a>
                     </div>

@@ -8,7 +8,7 @@
             <div class="col-md-12 text-center">
                 <br>
                 <ol class="breadcrumb">
-                    <li><a href="#">Články</a></li>
+                    <li><a href="#">Reference</a></li>
                     <li><a href="{{ $article->full_url }}">{{ $article->title }}</a></li>
                 </ol>
             </div>
@@ -30,7 +30,7 @@
 
                 {!! $article->text !!} </div>
             <div class="cbp-l-project-details pull-right">
-                <h5>Project detail :</h5>
+                <h5>Detaily projektu:</h5>
                 <ul class="cbp-l-project-details-list">
 
                     <li><strong>Datum</strong>{{ $article->publish_at->format('j.n.Y H:i') }}</li>
